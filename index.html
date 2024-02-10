@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Would You Like to Go on a Date?</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .heart-container {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: blink 1s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.2;
+            }
+        }
+
+        /* Pop-up styles */
+        .pop-up {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: none;
+            /* Initially hidden */
+        }
+
+        .pop-up.active {
+            display: block;
+            /* Show when active */
+        }
+
+        .shayari {
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <div class="container">
+        <h1>Would You Like to Go on a Date?</h1>
+        <p>Hi there,</p>
+        <p>I've been thinking it would be great to spend some time together. How about we go out for a coffee or a
+            movie?</p>
+        <button id="yesButton">Yes, I'd love to!</button>
+        <button id="noButton">Sorry, not interested.</button>
+        <div class="heart-container" id="heartContainer"></div>
+        <div id="popUp" class="pop-up">
+            <p class="shayari">Great! Looking forward to it!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
